@@ -1,16 +1,15 @@
 // ignore_for_file: prefer_const_constructors, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class ComplaintsPage extends StatefulWidget {
+  const ComplaintsPage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _ComplaintsPageState createState() => _ComplaintsPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ComplaintsPageState extends State<ComplaintsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

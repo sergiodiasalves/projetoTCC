@@ -12,7 +12,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 10)).then(
+    Future.delayed(const Duration(seconds: 3)).then(
       (_) => Navigator.of(context).pushReplacementNamed('/Home'),
     );
   }
@@ -23,16 +23,19 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
       body: Stack(
         children: [
           EasySplashScreen(
+            // ignore: prefer_const_constructors
             logo: Image(
               height: 900,
               width: 900,
-              image: AssetImage(
-                'assets/images/Bandeira_CC.png', 
+              image: const AssetImage(
+                'assets/images/Bandeira_CC.png',
               ),
             ),
+            // ignore: prefer_const_constructors
             title: Text(
               "Facilita Cerqueira",
               textAlign: TextAlign.center,
+              // ignore: prefer_const_constructors
               style: TextStyle(
                 color: Colors.black87,
                 fontSize: 48,
@@ -49,9 +52,11 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
             ),
             backgroundColor: Colors.grey.shade400,
             showLoader: true,
+            // ignore: prefer_const_constructors
             loadingText: Text(
               "Loading...",
               textAlign: TextAlign.center,
+              // ignore: prefer_const_constructors
               style: TextStyle(
                 color: Colors.black87,
                 fontSize: 32,
