@@ -12,7 +12,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 3)).then(
+    Future.delayed(Duration(seconds: 10)).then(
       (_) => Navigator.of(context).pushReplacementNamed('/Home'),
     );
   }
@@ -24,17 +24,18 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
         children: [
           EasySplashScreen(
             logo: Image(
-              height: 600,
-              width: 600,
+              height: 900,
+              width: 900,
               image: AssetImage(
-                'assets/Bandeira_CC.png',
+                'assets/images/Bandeira_CC.png', 
               ),
             ),
             title: Text(
               "Facilita Cerqueira",
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 32,
+                color: Colors.black87,
+                fontSize: 48,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -42,8 +43,8 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               colors: [
-                Colors.green.shade200,
-                Colors.green.shade600,
+                Colors.blue.shade200,
+                Colors.blue.shade800,
               ],
             ),
             backgroundColor: Colors.grey.shade400,
@@ -52,6 +53,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
               "Loading...",
               textAlign: TextAlign.center,
               style: TextStyle(
+                color: Colors.black87,
                 fontSize: 32,
                 fontWeight: FontWeight.w500,
               ),
