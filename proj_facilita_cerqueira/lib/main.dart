@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:proj_facilita_cerqueira/pages/complaints.dart';
 import 'package:proj_facilita_cerqueira/pages/home.dart';
+import 'package:proj_facilita_cerqueira/pages/information.dart';
 import 'package:proj_facilita_cerqueira/pages/splash_screen.dart';
 
 void main() {
@@ -21,6 +23,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/SplashScreen': (_) => const SplashScreenPage(),
         '/Home': (_) => const HomePage(),
+        '/Information': (_) => const InformationPage(),
+        '/Complaints': (_) => const ComplaintsPage(),
       },
     );
   }
