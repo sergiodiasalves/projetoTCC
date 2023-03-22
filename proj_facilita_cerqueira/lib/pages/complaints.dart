@@ -18,7 +18,7 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          'Denúncia',
+          'Denúncias',
           style: TextStyle(
             fontSize: 32,
             fontWeight: FontWeight.w500,

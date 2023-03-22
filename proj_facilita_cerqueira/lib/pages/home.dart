@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, avoid_print
+// ignore_for_file: prefer_const_constructors, avoid_print, unnecessary_new, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -28,9 +28,78 @@ class _HomePageState extends State<HomePage> {
         ),
         backgroundColor: (Colors.blue.shade600),
       ),
-      body: Stack(children: <Widget>[
-        Container(),
-      ]),
+      backgroundColor: Colors.blue.shade200,
+      body: Container(
+        padding: EdgeInsets.all(30.0),
+        child: GridView.count(
+          crossAxisCount: 2,
+          children: <Widget>[
+            MyMenu(
+                title: 'Informação',
+                icon: Icons.info_outline,
+                warna: Colors.blue),
+            MyMenu(
+                title: 'Denúncias',
+                icon: Icons.speaker_notes_outlined,
+                warna: Colors.blue),
+            MyMenu(title: 'Falta1', icon: Icons.bug_report, warna: Colors.red),
+            MyMenu(title: 'Falta2', icon: Icons.bug_report, warna: Colors.red),
+            MyMenu(title: 'Falta3', icon: Icons.bug_report, warna: Colors.red),
+            MyMenu(title: 'Falta3', icon: Icons.bug_report, warna: Colors.red),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class MyMenu extends StatelessWidget {
+  MyMenu({this.title, this.icon, this.warna});
+
+  final String? title;
+  final IconData? icon;
+  final MaterialColor? warna;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: EdgeInsets.all(8.0),
+      child: InkWell(
+        onTap: () {
+          if (title == 'Informação') {
+              Navigator.pushNamed(context, '/Information');
+            }
+            if (title == 'Denúncias') {
+              Navigator.pushNamed(context, '/Complaints');
+            }
+            if (title == 'Falta1') {
+              Navigator.pushNamed(context, '/Home');
+            }
+            if (title == 'Falta2') {
+              Navigator.pushNamed(context, '/Home');
+            }
+            if (title == 'Falta3') {
+              Navigator.pushNamed(context, '/Home');
+            }
+            if (title == 'Falta4') {
+              Navigator.pushNamed(context, '/Home');
+            }
+        },
+        splashColor: Colors.blue.shade600,
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Icon(
+                icon,
+                size: 70.0,
+                color: warna,
+              ),
+              Text(title ?? '', style: new TextStyle(fontSize: 17.0))
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
