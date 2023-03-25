@@ -5,7 +5,7 @@ import 'package:proj_facilita_cerqueira/pages/information.dart';
 import 'package:proj_facilita_cerqueira/pages/splash_screen.dart';
 
 
-void main() {
+main() {
   runApp(const MyApp());
 }
 
