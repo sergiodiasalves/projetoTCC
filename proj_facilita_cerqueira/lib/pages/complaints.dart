@@ -3,16 +3,19 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:proj_facilita_cerqueira/pages/lateralMenu.dart';
 
 class ComplaintsPage extends StatefulWidget {
-  const ComplaintsPage({Key? key}) : super(key: key);
+  ComplaintsPage({Key? key}) : super(key: key);
 
   @override
   _ComplaintsPageState createState() => _ComplaintsPageState();
 }
 
 class _ComplaintsPageState extends State<ComplaintsPage> {
+  final dropValue = ValueNotifier('');
+  final dropOpcoes = ['1', '2', '3', '4', '5'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,17 +85,43 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: TextField(
-                  decoration: InputDecoration(
-                    focusedBorder: InputBorder.none,
-                    enabledBorder:
-                        OutlineInputBorder(borderSide: BorderSide.none),
-                    filled: true,
-                    fillColor: Colors.white,
-                  ),
-                ),
-              ),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: ValueListenableBuilder(
+                      valueListenable: dropValue,
+                      builder: (BuildContext context, String value, _) {
+                        return SizedBox(
+                          width: MediaQuery.of(context).size.width,
+                          child: DropdownButtonFormField<String>(
+                            isExpanded: true,
+                            icon: const Icon(Icons.arrow_downward_rounded),
+                            hint: Center(
+                              child: const Text('Escolha o Tipo',   textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.black54,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        )),
+                            ), 
+                            decoration: InputDecoration(
+                              
+                              focusedBorder: InputBorder.none,
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide.none),
+                              filled: true,
+                              fillColor: Colors.white,
+                            ),
+                            value: (value.isEmpty) ? null : value,
+                            onChanged: (escolha) =>
+                                dropValue.value = escolha.toString(),
+                            items: dropOpcoes
+                                .map((op) => DropdownMenuItem(
+                                      value: op,
+                                      child: Text(op),
+                                    ))
+                                .toList(),
+                          ),
+                        );
+                      })),
               Container(
                 padding: EdgeInsets.all(10),
                 child: Row(

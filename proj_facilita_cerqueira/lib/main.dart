@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         '/SplashScreen': (_) => const SplashScreenPage(),
         '/Home': (_) => const HomePage(),
         '/Information': (_) => const InformationPage(),
-        '/Complaints': (_) => const ComplaintsPage(),
+        '/Complaints': (_) => ComplaintsPage(),
       },
     );
   }

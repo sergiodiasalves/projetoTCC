@@ -48,7 +48,7 @@ class _InformationPageState extends State<InformationPage> {
               height: 30,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(color: Colors.green.shade100),
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.fromLTRB(10, 5, 0, 5),
               child: (Row(children: <Widget>[
                 SizedBox(
                   height: 30,
@@ -61,20 +61,23 @@ class _InformationPageState extends State<InformationPage> {
                       )),
                 ),
                 Expanded(
-                    child: Text('(99) 1234-1234',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: Colors.black87,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        )))
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                      child: Text('(99) 1234-1234',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                            color: Colors.black87,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          )),
+                    ))
               ])),
             ),
             Container(
               height: 30,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(color: Colors.green.shade100),
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.fromLTRB(10, 5, 0, 5),
               child: (Row(children: <Widget>[
                 SizedBox(
                   height: 30,
@@ -87,20 +90,23 @@ class _InformationPageState extends State<InformationPage> {
                       )),
                 ),
                 Expanded(
-                    child: Text('(99) 1234-1234',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: Colors.black87,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        )))
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                      child: Text('(99) 1234-1234',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                            color: Colors.black87,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          )),
+                    ))
               ])),
             ),
             Container(
               height: 30,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(color: Colors.green.shade100),
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.fromLTRB(10, 5, 0, 5),
               child: (Row(children: <Widget>[
                 SizedBox(
                   height: 30,
@@ -113,20 +119,23 @@ class _InformationPageState extends State<InformationPage> {
                       )),
                 ),
                 Expanded(
-                    child: Text('(99) 1234-1234',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: Colors.black87,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        )))
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                      child: Text('(99) 1234-1234',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                            color: Colors.black87,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          )),
+                    ))
               ])),
             ),
             Container(
               height: 30,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(color: Colors.green.shade100),
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.fromLTRB(10, 5, 0, 5),
               child: (Row(children: <Widget>[
                 SizedBox(
                   height: 30,
@@ -139,20 +148,23 @@ class _InformationPageState extends State<InformationPage> {
                       )),
                 ),
                 Expanded(
-                    child: Text('(99) 1234-1234',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: Colors.black87,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        )))
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                      child: Text('(99) 1234-1234',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                            color: Colors.black87,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          )),
+                    ))
               ])),
             ),
             Container(
               height: 30,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(color: Colors.green.shade100),
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.fromLTRB(10, 5, 0, 5),
               child: (Row(children: <Widget>[
                 SizedBox(
                   height: 30,
@@ -165,20 +177,23 @@ class _InformationPageState extends State<InformationPage> {
                       )),
                 ),
                 Expanded(
-                    child: Text('(99) 1234-1234',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: Colors.black87,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        )))
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                      child: Text('(99) 1234-1234',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                            color: Colors.black87,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          )),
+                    ))
               ])),
             ),
             Container(
               height: 30,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(color: Colors.green.shade100),
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.fromLTRB(10, 5, 0, 5),
               child: (Row(children: <Widget>[
                 SizedBox(
                   height: 30,
@@ -191,13 +206,16 @@ class _InformationPageState extends State<InformationPage> {
                       )),
                 ),
                 Expanded(
-                    child: Text('(99) 1234-1234',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: Colors.black87,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        )))
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                      child: Text('(99) 1234-1234',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                            color: Colors.black87,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          )),
+                    ))
               ])),
             ),
             Container(
@@ -219,7 +237,7 @@ class _InformationPageState extends State<InformationPage> {
               height: 50,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(color: Colors.green.shade100),
-              padding: EdgeInsets.all(3),
+              padding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
               child: ListTile(
                 dense: true,
                 visualDensity: VisualDensity(horizontal: 0, vertical: -4),
@@ -245,7 +263,7 @@ class _InformationPageState extends State<InformationPage> {
               height: 50,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(color: Colors.green.shade100),
-              padding: EdgeInsets.all(3),
+              padding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
               child: ListTile(
                 dense: true,
                 visualDensity: VisualDensity(horizontal: 0, vertical: -4),
@@ -271,7 +289,7 @@ class _InformationPageState extends State<InformationPage> {
               height: 50,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(color: Colors.green.shade100),
-              padding: EdgeInsets.all(3),
+              padding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
               child: ListTile(
                 dense: true,
                 visualDensity: VisualDensity(horizontal: 0, vertical: -4),
@@ -297,7 +315,7 @@ class _InformationPageState extends State<InformationPage> {
               height: 50,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(color: Colors.green.shade100),
-              padding: EdgeInsets.all(3),
+              padding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
               child: ListTile(
                 dense: true,
                 visualDensity: VisualDensity(horizontal: 0, vertical: -4),
@@ -323,7 +341,7 @@ class _InformationPageState extends State<InformationPage> {
               height: 50,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(color: Colors.green.shade100),
-              padding: EdgeInsets.all(3),
+              padding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
               child: ListTile(
                 dense: true,
                 visualDensity: VisualDensity(horizontal: 0, vertical: -4),
@@ -349,7 +367,7 @@ class _InformationPageState extends State<InformationPage> {
               height: 50,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(color: Colors.green.shade100),
-              padding: EdgeInsets.all(3),
+              padding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
               child: ListTile(
                 dense: true,
                 visualDensity: VisualDensity(horizontal: 0, vertical: -4),
