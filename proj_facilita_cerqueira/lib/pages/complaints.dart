@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:proj_facilita_cerqueira/pages/lateralMenu.dart';
 
 class ComplaintsPage extends StatefulWidget {
-  ComplaintsPage({Key? key}) : super(key: key);
+ const ComplaintsPage({Key? key}) : super(key: key);
 
   @override
   _ComplaintsPageState createState() => _ComplaintsPageState();
@@ -194,7 +194,16 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
               decoration: BoxDecoration(color: Colors.grey.shade400),
               padding: EdgeInsets.all(5),
             )
-          ])),
+          ]
+          )
+          ),
+          bottomSheet: Container(
+          height: 15,
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(color: Colors.grey.shade400),
+          padding: const EdgeInsets.all(5),
+        )
     );
+        
   }
 }

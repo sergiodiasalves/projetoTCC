@@ -45,11 +45,18 @@ class _HomePageState extends State<HomePage> {
             MyMenu(title: 'Falta1', icon: Icons.bug_report, warna: Colors.red),
             MyMenu(title: 'Falta2', icon: Icons.bug_report, warna: Colors.red),
             MyMenu(title: 'Falta3', icon: Icons.bug_report, warna: Colors.red),
-            MyMenu(title: 'Falta3', icon: Icons.bug_report, warna: Colors.red),
+            MyMenu(title: 'Notícias', icon: Icons.article_outlined,warna: Colors.blue),
           ],
         ),
       ),
+      bottomSheet: Container(
+          height: 15,
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(color: Colors.grey.shade400),
+          padding: const EdgeInsets.all(5),
+        )
     );
+        
   }
 }
 
@@ -81,8 +88,8 @@ class MyMenu extends StatelessWidget {
             if (title == 'Falta3') {
               Navigator.pushNamed(context, '/Home');
             }
-            if (title == 'Falta4') {
-              Navigator.pushNamed(context, '/Home');
+            if (title == 'Notícias') {
+              Navigator.pushNamed(context, '/News');
             }
         },
         splashColor: Colors.blue.shade600,

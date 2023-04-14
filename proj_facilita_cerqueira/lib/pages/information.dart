@@ -396,6 +396,7 @@ class _InformationPageState extends State<InformationPage> {
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(color: Colors.grey.shade400),
           padding: EdgeInsets.all(5),
-        ));
+        )
+        );
   }
 }

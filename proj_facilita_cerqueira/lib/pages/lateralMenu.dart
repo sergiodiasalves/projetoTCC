@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, prefer_const_constructors
+// ignore_for_file: file_names, prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +14,6 @@ class _LateralMenuPageState extends State<LateralMenuPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       height: 600,
       child: Drawer(
         child: Container(
@@ -79,6 +78,24 @@ class _LateralMenuPageState extends State<LateralMenuPage> {
                     Navigator.of(context).pop();
 
                     Navigator.pushNamed(context, '/Complaints');
+                  }),
+                  ListTile(
+                  leading: Icon(
+                    Icons.article_outlined,
+                    color: Colors.lightBlue.shade600,
+                  ),
+                  title: Text(
+                    'Notícias',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.lightBlue.shade700,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+
+                    Navigator.pushNamed(context, '/News');
                   }),
               Divider(),
               ListTile(

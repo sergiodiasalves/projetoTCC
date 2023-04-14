@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proj_facilita_cerqueira/pages/complaints.dart';
 import 'package:proj_facilita_cerqueira/pages/home.dart';
 import 'package:proj_facilita_cerqueira/pages/information.dart';
+import 'package:proj_facilita_cerqueira/pages/news.dart';
 import 'package:proj_facilita_cerqueira/pages/splash_screen.dart';
 
 
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         '/SplashScreen': (_) => const SplashScreenPage(),
         '/Home': (_) => const HomePage(),
         '/Information': (_) => const InformationPage(),
-        '/Complaints': (_) => ComplaintsPage(),
+        '/Complaints': (_) => const ComplaintsPage(),
+        '/News': (_) => const NewsPage(),
       },
     );
   }
