@@ -16,6 +16,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
       (_) => Navigator.of(context).pushReplacementNamed('/Home'),
     );
   }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -23,19 +24,16 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
       body: Stack(
         children: [
           EasySplashScreen(
-            // ignore: prefer_const_constructors
-            logo: Image(
+            logo: const Image(
               height: 900,
               width: 900,
-              image: const AssetImage(
+              image: AssetImage(
                 'assets/images/Bandeira_CC.png',
               ),
             ),
-            // ignore: prefer_const_constructors
-            title: Text(
+            title: const Text(
               "Facilita Cerqueira",
               textAlign: TextAlign.center,
-              // ignore: prefer_const_constructors
               style: TextStyle(
                 color: Colors.black87,
                 fontSize: 48,
@@ -52,11 +50,9 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
             ),
             backgroundColor: Colors.grey.shade400,
             showLoader: true,
-            // ignore: prefer_const_constructors
-            loadingText: Text(
+            loadingText: const Text(
               "Loading...",
               textAlign: TextAlign.center,
-              // ignore: prefer_const_constructors
               style: TextStyle(
                 color: Colors.black87,
                 fontSize: 32,

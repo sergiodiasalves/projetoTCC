@@ -36,6 +36,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   easy_splash_screen: ^1.0.4
+  http: ^0.13.5
+  flutter_exit_app: ^1.1.2
+  
 
   
 

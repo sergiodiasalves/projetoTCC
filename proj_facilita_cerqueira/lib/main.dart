@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:proj_facilita_cerqueira/pages/complaints.dart';
-import 'package:proj_facilita_cerqueira/pages/home.dart';
-import 'package:proj_facilita_cerqueira/pages/information.dart';
-import 'package:proj_facilita_cerqueira/pages/news.dart';
-import 'package:proj_facilita_cerqueira/pages/splash_screen.dart';
+import 'package:proj_facilita_cerqueira/src/pages/complaints.dart';
+import 'package:proj_facilita_cerqueira/src/pages/home.dart';
+import 'package:proj_facilita_cerqueira/src/pages/information.dart';
+import 'package:proj_facilita_cerqueira/src/pages/map.dart';
+import 'package:proj_facilita_cerqueira/src/pages/news.dart';
+import 'package:proj_facilita_cerqueira/src/widgets/splash_screen.dart';
+
 
 
 main() {
@@ -28,6 +30,7 @@ class MyApp extends StatelessWidget {
         '/Information': (_) => const InformationPage(),
         '/Complaints': (_) => const ComplaintsPage(),
         '/News': (_) => const NewsPage(),
+        '/Map':(_) => const MapPage(),
       },
     );
   }

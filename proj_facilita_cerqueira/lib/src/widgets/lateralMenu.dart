@@ -1,7 +1,8 @@
-// ignore_for_file: file_names, prefer_const_constructors, sized_box_for_whitespace
+// ignore_for_file: file_names, prefer_const_constructors, sized_box_for_whitespace, avoid_print
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_exit_app/flutter_exit_app.dart';
 
 class LateralMenuPage extends StatefulWidget {
   const LateralMenuPage({Key? key}) : super(key: key);
@@ -79,7 +80,7 @@ class _LateralMenuPageState extends State<LateralMenuPage> {
 
                     Navigator.pushNamed(context, '/Complaints');
                   }),
-                  ListTile(
+              ListTile(
                   leading: Icon(
                     Icons.article_outlined,
                     color: Colors.lightBlue.shade600,
@@ -99,19 +100,23 @@ class _LateralMenuPageState extends State<LateralMenuPage> {
                   }),
               Divider(),
               ListTile(
-                  leading: Icon(
-                    Icons.exit_to_app,
-                    color: Colors.lightBlue.shade600,
+                leading: Icon(
+                  Icons.exit_to_app,
+                  color: Colors.lightBlue.shade600,
+                ),
+                title: Text(
+                  'Sair',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.lightBlue.shade700,
                   ),
-                  title: Text(
-                    'Sair',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.lightBlue.shade700,
-                    ),
-                  ),
-                  onTap: () {}),
+                ),
+                onTap: () {
+                  print('sair');
+                  FlutterExitApp.exitApp(iosForceExit: true);
+                },
+              ),
             ],
           ),
         ),
