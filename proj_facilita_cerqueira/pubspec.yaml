@@ -38,6 +38,9 @@ dependencies:
   easy_splash_screen: ^1.0.4
   http: ^0.13.5
   flutter_exit_app: ^1.1.2
+  date_format: ^2.0.7
+  flutter_localization:
+
   
 
   

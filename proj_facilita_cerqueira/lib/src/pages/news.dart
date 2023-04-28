@@ -45,31 +45,22 @@ class _NewsPageState extends State<NewsPage> {
     '  A POLÍCIA CIVIL esclarece que não houve e não há ameaças de atentados em escolas do município de Cerqueira César.\nHouve, no entanto, um compartilhamento de uma postagem feita por um perfil de outra localidade.\nCom o apoio da POLÍCIA MILITAR os indivíduos que compartilharam foram identificados, prestaram esclarecimentos e foram autuados por apologia a fato criminoso.\nTodas as medidas para a proteção de nossas crianças e adolescentes estão sendo adotadas por ambas as POLÍCIAS.\nToda e qualquer ameaça será prontamente investigada e seus autores levados à JUSTIÇA.',
     'Na manhã deste domingo (09/04), foi realizada a 1ª Etapa da Meia Maratona Selvagem 21 e 7km no município de Paranapanema.\nNa categoria 35 a 39 anos (7km) a atleta Cristiane Aureliano( Elite Cerqueira),conquistou o primeiro lugar e na categoria 40 a 44 anos (21km) o atleta Guilherme Arruda (Elite Cerqueira), conquistou o terceiro lugar.\nO Governo de Cerqueira César e a Secretaria Municipal de Esportes parabenizam os atletas cerqueirenses pela participação, dedicação, esforço e pelas vitórias conquistadas.  (Comunicação da Prefeitura)',
     'O Governo de Cerqueira César deseja a todas famílias uma feliz e abençoada Páscoa. Que Cristo possa verdadeiramente renascer no coração de cada munícipe.',
-
     'O Governo de Cerqueira César por meio da Secretaria Municipal de Desenvolvimento Econômico e Cidadania, PROCON realiza a Palestra Instrutiva: "Procon e Comércio de Cerqueira César," (18/04) às 09h00 na Câmara Municipal.\n\nAPOIO: ACICC (Associação Comercial e Industrial) e Câmara Municipal de Cerqueira César.',
     'A Diretoria de Obras e Serviços informa a população que em virtude do Feriado da Sexta - Feira Santa , não haverá coleta do lixo doméstico no município no dia  07/04.\n\nA coleta será realizada na Quinta - Feira dia (06/04) e Sábado dia (8/04). (Comunicação da Prefeitura)',
   ];
   var imgList = [
     'https://i.postimg.cc/KYW4My5J/01-pessoaidosa.jpg',
-
     'https://i.postimg.cc/9fW6VR57/02-feiradalua.jpg',
-
     'https://i.postimg.cc/Y2fy22RN/03-cerkarock.jpg',
-
     'https://i.postimg.cc/X7j1rM1R/04-boletim-Covud.jpg',
-
     'https://i.postimg.cc/LXZ5k0CR/05-combatecovid.jpg',
-
     'https://i.postimg.cc/15vC6WLf/06-notapoliciacivil.jpg',
-
     'https://i.postimg.cc/brNMc47f/07-maratona.jpg',
-
     'https://i.postimg.cc/nzH9T4WM/08-pascoa.jpg',
-
     'https://i.postimg.cc/SKydwM2Y/09-palestra.jpg',
-
     'https://i.postimg.cc/4nknjp3D/10-obras.jpg',
   ];
+  
 
   @override
   Widget build(BuildContext context) {
@@ -82,78 +73,310 @@ class _NewsPageState extends State<NewsPage> {
             decoration: BoxDecoration(color: Colors.green.shade200),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: ListView.builder(
-                  itemCount: imgList.length,
-                  itemBuilder: (context, index) => GestureDetector(
-                        onTap: () {
-                          showDialogFuncion(context, imgList[index],
-                              titleList[index], descrList[index]);
-                        },
-                        child: Card(
-                            elevation: 10,
-                            color: Colors.blue.shade50,
-                            child: Row(
-                              children: <Widget>[
-                                SizedBox(
-                                  width: 120,
-                                  height: 120,
-                                  child: Image.network(imgList[index]),
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: <Widget>[
-                                    SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.6,
-                                      child: Center(
-                                        child: Text(
-                                          titleList[index],
-                                          textAlign: TextAlign.center,
-                                          style: const TextStyle(
-                                            fontSize: 18,
-                                            color: Colors.black87,
-                                            fontWeight: FontWeight.bold,
+              child: Column(
+                
+                children: [
+                  Expanded(
+                    flex: 1,
+                    
+                    child: ListView(
+                     
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: TextButton(
+                            child: const Text(
+                              'Saúde',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                Colors.white,
+                              ),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                      side: const BorderSide(
+                                          color: Colors.white70))),
+                            ),
+                            onPressed: () {},
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: TextButton(
+                            child: const Text(
+                              'Infra',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                Colors.white,
+                              ),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                      side: const BorderSide(
+                                          color: Colors.white70))),
+                            ),
+                            onPressed: () {},
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: TextButton(
+                            child: const Text(
+                              'DAE',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                Colors.white,
+                              ),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                      side: const BorderSide(
+                                          color: Colors.white70))),
+                            ),
+                            onPressed: () {},
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: TextButton(
+                            child: const Text(
+                              'Idosos',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                Colors.white,
+                              ),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                      side: const BorderSide(
+                                          color: Colors.white70))),
+                            ),
+                            onPressed: () {},
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: TextButton(
+                            child: const Text(
+                              'Deficientes',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                Colors.white,
+                              ),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                      side: const BorderSide(
+                                          color: Colors.white70))),
+                            ),
+                            onPressed: () {},
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: TextButton(
+                            child: const Text(
+                              'Segurança',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                Colors.white,
+                              ),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                      side: const BorderSide(
+                                          color: Colors.white70))),
+                            ),
+                            onPressed: () {},
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: TextButton(
+                            child: const Text(
+                              'Segurança',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                Colors.white,
+                              ),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                      side: const BorderSide(
+                                          color: Colors.white70))),
+                            ),
+                            onPressed: () {},
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: TextButton(
+                            child: const Text(
+                              'Segurança',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                Colors.white,
+                              ),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                      side: const BorderSide(
+                                          color: Colors.white70))),
+                            ),
+                            onPressed: () {},
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: TextButton(
+                            child: const Text(
+                              'Segurança',
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                Colors.white,
+                              ),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                      side: const BorderSide(
+                                          color: Colors.white70))),
+                            ),
+                            onPressed: () {},
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 18,
+                    child: ListView.builder(
+                        itemCount: imgList.length,
+                        itemBuilder: (context, index) => GestureDetector(
+                              onTap: () {
+                                showDialogFuncion(context, imgList[index],
+                                    titleList[index], descrList[index]);
+                              },
+                              child: Card(
+                                  elevation: 10,
+                                  color: Colors.blue.shade50,
+                                  child: Row(
+                                    children: <Widget>[
+                                      SizedBox(
+                                        width: 120,
+                                        height: 120,
+                                        child: Image.network(imgList[index]),
+                                      ),
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: <Widget>[
+                                          SizedBox(
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.6,
+                                            child: Center(
+                                              child: Text(
+                                                titleList[index],
+                                                textAlign: TextAlign.center,
+                                                style: const TextStyle(
+                                                  fontSize: 18,
+                                                  color: Colors.black87,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-                                    SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.6,
-                                      child: Text(
-                                        descrList[index],
-                                        textAlign: TextAlign.justify,
-                                        maxLines: 4,
-                                        style: const TextStyle(
-                                            fontSize: 15,
-                                            color: Colors.black87),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.6,
-                                      child: const Text(
-                                        '... Ver Mais',
-                                        textAlign: TextAlign.end,
-                                        maxLines: 1,
-                                        style: TextStyle(
-                                          fontSize: 15,
-                                          color: Colors.blueAccent,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
+                                          const SizedBox(
+                                            height: 10,
+                                          ),
+                                          SizedBox(
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.6,
+                                            child: Text(
+                                              descrList[index],
+                                              textAlign: TextAlign.justify,
+                                              maxLines: 4,
+                                              style: const TextStyle(
+                                                  fontSize: 15,
+                                                  color: Colors.black87),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.6,
+                                            child: const Text(
+                                              '... Ver Mais',
+                                              textAlign: TextAlign.end,
+                                              maxLines: 1,
+                                              style: TextStyle(
+                                                fontSize: 15,
+                                                color: Colors.blueAccent,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  )),
                             )),
-                      )),
+                  ),
+                ],
+              ),
             )),
         bottomSheet: Container(
           height: 15,

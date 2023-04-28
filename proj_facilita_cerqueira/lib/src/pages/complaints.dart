@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, avoid_print, prefer_const_literals_to_create_immutables
 
 import 'dart:ui';
-
+import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:proj_facilita_cerqueira/src/widgets/appBarCustom.dart';
@@ -17,6 +17,9 @@ class ComplaintsPage extends StatefulWidget {
 class _ComplaintsPageState extends State<ComplaintsPage> {
   final dropValue = ValueNotifier('');
   final dropOpcoes = ['1', '2', '3', '4', '5'];
+
+  DateTime _data = DateTime.now();
+  
 
   @override
   Widget build(BuildContext context) {
@@ -51,15 +54,49 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      focusedBorder: InputBorder.none,
-                      enabledBorder:
-                          OutlineInputBorder(borderSide: BorderSide.none),
-                      filled: true,
-                      fillColor: Colors.white,
+                Container(
+                  padding: EdgeInsets.all(10),
+                  child: SizedBox(
+                    height: 50,
+                    width: MediaQuery.of(context).size.width,
+                    child: ElevatedButton(
+                      child:
+                         Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                           children: [
+                             Expanded(
+                              flex: 10,
+                               child: Center(
+                                 child: Text(formatDate(_data, [dd, '-', mm, '-', yyyy]),
+                                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black54)),
+                               ),
+                             ),
+                              
+                                   Expanded(
+                                    flex:1,
+                                     child: Icon(Icons.calendar_today_outlined, color: Colors.black54
+                                                         ),
+                                   ),
+                           ],
+                         ),
+                     
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.symmetric(horizontal: 15),
+                        backgroundColor: Colors.white,
+                      ),
+                      onPressed: () async {
+                        final dtPick = await showDatePicker(
+                            context: context,
+                            initialDate: DateTime.now(),
+                            firstDate: DateTime(1900),
+                            lastDate: DateTime(2100));
+
+                        if (dtPick != null && dtPick != _data) {
+                          setState(() {
+                            _data = dtPick;
+                          });
+                        }
+                      },
                     ),
                   ),
                 ),
@@ -90,11 +127,7 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                               hint: Center(
                                 child: const Text('Escolha o Tipo',
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.black54,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                    )),
+                                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black54)),
                               ),
                               decoration: InputDecoration(
                                 focusedBorder: InputBorder.none,
@@ -109,7 +142,7 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                               items: dropOpcoes
                                   .map((op) => DropdownMenuItem(
                                         value: op,
-                                        child: Text(op),
+                                        child: Text(op,  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black54)),
                                       ))
                                   .toList(),
                             ),
@@ -132,6 +165,7 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: TextField(
+                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black54),
                     decoration: InputDecoration(
                       focusedBorder: InputBorder.none,
                       enabledBorder:
@@ -158,6 +192,7 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: TextField(
+                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black54),
                     keyboardType: TextInputType.multiline,
                     maxLines: 7,
                     decoration: InputDecoration(
@@ -176,17 +211,11 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                     onPressed: () {
                       print('ok');
                     },
-                    child: Text('Enviar Denúncia')),
+                    child: Text('Enviar Denúncia',  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black54))),
                 SizedBox(
                   height: 20,
                 ),
               ]))),
-              Container(
-                height: 15,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(color: Colors.grey.shade400),
-                padding: EdgeInsets.all(5),
-              )
             ])),
         bottomSheet: Container(
           height: 15,

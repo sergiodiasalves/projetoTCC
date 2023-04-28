@@ -5,8 +5,7 @@ import 'package:proj_facilita_cerqueira/src/pages/information.dart';
 import 'package:proj_facilita_cerqueira/src/pages/map.dart';
 import 'package:proj_facilita_cerqueira/src/pages/news.dart';
 import 'package:proj_facilita_cerqueira/src/widgets/splash_screen.dart';
-
-
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 main() {
   runApp(const MyApp());
@@ -18,6 +17,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate
+      ],
+      supportedLocales: const [Locale('pt', 'BR')],
       debugShowCheckedModeBanner: false,
       title: 'Facilita Cerqueira',
       theme: ThemeData(
