@@ -1,6 +1,3 @@
-// ignore_for_file: file_names, prefer_const_constructors, sized_box_for_whitespace, avoid_print
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_exit_app/flutter_exit_app.dart';
 
@@ -14,7 +11,7 @@ class LateralMenuPage extends StatefulWidget {
 class _LateralMenuPageState extends State<LateralMenuPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 600,
       child: Drawer(
         child: Container(
@@ -98,7 +95,7 @@ class _LateralMenuPageState extends State<LateralMenuPage> {
 
                     Navigator.pushNamed(context, '/News');
                   }),
-              Divider(),
+              const Divider(),
               ListTile(
                 leading: Icon(
                   Icons.exit_to_app,
@@ -113,7 +110,6 @@ class _LateralMenuPageState extends State<LateralMenuPage> {
                   ),
                 ),
                 onTap: () {
-                  print('sair');
                   FlutterExitApp.exitApp(iosForceExit: true);
                 },
               ),

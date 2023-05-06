@@ -1,11 +1,7 @@
-// ignore_for_file: prefer_const_constructors, avoid_print, prefer_const_literals_to_create_immutables
-
-import 'dart:ui';
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:proj_facilita_cerqueira/src/widgets/appBarCustom.dart';
-import 'package:proj_facilita_cerqueira/src/widgets/lateralMenu.dart';
+import 'package:proj_facilita_cerqueira/src/widgets/app_bar_custom.dart';
+import 'package:proj_facilita_cerqueira/src/widgets/lateral_menu.dart';
 
 class ComplaintsPage extends StatefulWidget {
   const ComplaintsPage({Key? key}) : super(key: key);
@@ -16,7 +12,7 @@ class ComplaintsPage extends StatefulWidget {
 
 class _ComplaintsPageState extends State<ComplaintsPage> {
   final dropValue = ValueNotifier('');
-  final dropOpcoes = ['1', '2', '3', '4', '5'];
+  final dropOpcoes = ['Saúde', 'Educação', 'Esporte', 'Cultura', 'Meio Ambiente', 'Infra-Estrutura'];
 
   DateTime _data = DateTime.now();
   
@@ -24,8 +20,8 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: LateralMenuPage(),
-        appBar: AppBarCustom(
+        drawer: const LateralMenuPage(),
+        appBar: const AppBarCustom(
           title: Text('Denúncias'),
         ),
         body: Container(
@@ -38,11 +34,11 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                   height: 15,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(color: Colors.grey.shade400),
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                 ),
                 Container(
-                  padding: EdgeInsets.all(10),
-                  child: Row(
+                  padding: const EdgeInsets.all(10),
+                  child: const Row(
                     children: [
                       Text('Data :',
                           textAlign: TextAlign.left,
@@ -55,7 +51,7 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: SizedBox(
                     height: 50,
                     width: MediaQuery.of(context).size.width,
@@ -68,20 +64,20 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                               flex: 10,
                                child: Center(
                                  child: Text(formatDate(_data, [dd, '-', mm, '-', yyyy]),
-                                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black54)),
+                                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black)),
                                ),
                              ),
                               
-                                   Expanded(
+                                   const Expanded(
                                     flex:1,
-                                     child: Icon(Icons.calendar_today_outlined, color: Colors.black54
+                                     child: Icon(Icons.calendar_today_outlined, color: Colors.blue
                                                          ),
                                    ),
                            ],
                          ),
                      
                       style: TextButton.styleFrom(
-                        padding: EdgeInsets.symmetric(horizontal: 15),
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
                         backgroundColor: Colors.white,
                       ),
                       onPressed: () async {
@@ -101,8 +97,8 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.all(10),
-                  child: Row(
+                  padding: const EdgeInsets.all(10),
+                  child: const Row(
                     children: [
                       Text('Tipo :',
                           textAlign: TextAlign.left,
@@ -124,12 +120,12 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                             child: DropdownButtonFormField<String>(
                               isExpanded: true,
                               icon: const Icon(Icons.arrow_downward_rounded),
-                              hint: Center(
-                                child: const Text('Escolha o Tipo',
+                              hint: const Center(
+                                child: Text('Escolha o Tipo',
                                     textAlign: TextAlign.center,
                                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black54)),
                               ),
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 focusedBorder: InputBorder.none,
                                 enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide.none),
@@ -142,15 +138,15 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                               items: dropOpcoes
                                   .map((op) => DropdownMenuItem(
                                         value: op,
-                                        child: Text(op,  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black54)),
+                                        child: Text(op,  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black54)),
                                       ))
                                   .toList(),
                             ),
                           );
                         })),
                 Container(
-                  padding: EdgeInsets.all(10),
-                  child: Row(
+                  padding: const EdgeInsets.all(10),
+                  child: const Row(
                     children: [
                       Text('Titulo :',
                           textAlign: TextAlign.left,
@@ -162,8 +158,8 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
                   child: TextField(
                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black54),
                     decoration: InputDecoration(
@@ -176,8 +172,8 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.all(10),
-                  child: Row(
+                  padding: const EdgeInsets.all(10),
+                  child: const Row(
                     children: [
                       Text('Descrição :',
                           textAlign: TextAlign.left,
@@ -189,8 +185,8 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
                   child: TextField(
                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black54),
                     keyboardType: TextInputType.multiline,
@@ -204,15 +200,15 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      print('ok');
+                      
                     },
-                    child: Text('Enviar Denúncia',  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black54))),
-                SizedBox(
+                    child: const Text('Enviar Denúncia',  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black54))),
+                const SizedBox(
                   height: 20,
                 ),
               ]))),

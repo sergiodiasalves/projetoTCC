@@ -1,9 +1,6 @@
-// ignore_for_file: prefer_const_constructors, avoid_print, unnecessary_new, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:proj_facilita_cerqueira/src/widgets/appBarCustom.dart';
-import 'package:proj_facilita_cerqueira/src/widgets/lateralMenu.dart';
+import 'package:proj_facilita_cerqueira/src/widgets/app_bar_custom.dart';
+import 'package:proj_facilita_cerqueira/src/widgets/lateral_menu.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,30 +13,25 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: LateralMenuPage(),
-        appBar: AppBarCustom(
+        drawer: const LateralMenuPage(),
+        appBar: const AppBarCustom(
           title: Text('Facilita Cerqueira'),
         ),
         backgroundColor: Colors.blue.shade200,
         body: Container(
-          padding: EdgeInsets.all(30.0),
+          padding: const EdgeInsets.fromLTRB(50, 2, 50, 2),
           child: GridView.count(
-            crossAxisCount: 2,
-            children: <Widget>[
+            childAspectRatio: (.8 / .5),
+            crossAxisCount: 1,
+            children: const <Widget>[
               MyMenu(
-                  title: 'Informação',
+                  title: 'Informações',
                   icon: Icons.info_outline,
                   warna: Colors.blue),
               MyMenu(
                   title: 'Denúncias',
                   icon: Icons.speaker_notes_outlined,
-                  warna: Colors.blue),
-              MyMenu(
-                  title: 'Falta1', icon: Icons.bug_report, warna: Colors.red),
-              MyMenu(
-                  title: 'Falta2', icon: Icons.bug_report, warna: Colors.red),
-              MyMenu(
-                  title: 'Mapa da Cidade', icon: Icons.bug_report, warna: Colors.blue),
+                  warna: Colors.blue),                           
               MyMenu(
                   title: 'Notícias',
                   icon: Icons.article_outlined,
@@ -57,7 +49,7 @@ class _HomePageState extends State<HomePage> {
 }
 
 class MyMenu extends StatelessWidget {
-  MyMenu({this.title, this.icon, this.warna});
+  const MyMenu({Key? key, this.title, this.icon, this.warna}) : super(key: key);
 
   final String? title;
   final IconData? icon;
@@ -66,23 +58,14 @@ class MyMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.all(8.0),
+      margin: const EdgeInsets.all(8.0),
       child: InkWell(
         onTap: () {
-          if (title == 'Informação') {
+          if (title == 'Informações') {
             Navigator.pushNamed(context, '/Information');
           }
           if (title == 'Denúncias') {
             Navigator.pushNamed(context, '/Complaints');
-          }
-          if (title == 'Falta1') {
-            Navigator.pushNamed(context, '/Home');
-          }
-          if (title == 'Falta2') {
-            Navigator.pushNamed(context, '/Home');
-          }
-          if (title == 'Mapa da Cidade') {
-            Navigator.pushNamed(context, '/Map');
           }
           if (title == 'Notícias') {
             Navigator.pushNamed(context, '/News');
@@ -98,7 +81,7 @@ class MyMenu extends StatelessWidget {
                 size: 70.0,
                 color: warna,
               ),
-              Text(title ?? '', style: new TextStyle(fontSize: 17.0))
+              Text(title ?? '', style: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold,))
             ],
           ),
         ),

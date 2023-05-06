@@ -1,8 +1,6 @@
-// ignore_for_file: avoid_unnecessary_containers
-
 import 'package:flutter/material.dart';
-import 'package:proj_facilita_cerqueira/src/widgets/appBarCustom.dart';
-import 'package:proj_facilita_cerqueira/src/widgets/lateralMenu.dart';
+import 'package:proj_facilita_cerqueira/src/widgets/app_bar_custom.dart';
+import 'package:proj_facilita_cerqueira/src/widgets/lateral_menu.dart';
 
 class NewsPage extends StatefulWidget {
   const NewsPage({Key? key}) : super(key: key);
@@ -66,236 +64,17 @@ class _NewsPageState extends State<NewsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: const LateralMenuPage(),
-        appBar: AppBarCustom(
-          title: const Text('Notícias'),
+        appBar: const AppBarCustom(
+          title: Text('Notícias'),
         ),
         body: Container(
             decoration: BoxDecoration(color: Colors.green.shade200),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
-                
                 children: [
                   Expanded(
-                    flex: 1,
-                    
-                    child: ListView(
-                     
-                      scrollDirection: Axis.horizontal,
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: TextButton(
-                            child: const Text(
-                              'Saúde',
-                              style: TextStyle(
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                Colors.white,
-                              ),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      side: const BorderSide(
-                                          color: Colors.white70))),
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: TextButton(
-                            child: const Text(
-                              'Infra',
-                              style: TextStyle(
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                Colors.white,
-                              ),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      side: const BorderSide(
-                                          color: Colors.white70))),
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: TextButton(
-                            child: const Text(
-                              'DAE',
-                              style: TextStyle(
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                Colors.white,
-                              ),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      side: const BorderSide(
-                                          color: Colors.white70))),
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: TextButton(
-                            child: const Text(
-                              'Idosos',
-                              style: TextStyle(
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                Colors.white,
-                              ),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      side: const BorderSide(
-                                          color: Colors.white70))),
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: TextButton(
-                            child: const Text(
-                              'Deficientes',
-                              style: TextStyle(
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                Colors.white,
-                              ),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      side: const BorderSide(
-                                          color: Colors.white70))),
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: TextButton(
-                            child: const Text(
-                              'Segurança',
-                              style: TextStyle(
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                Colors.white,
-                              ),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      side: const BorderSide(
-                                          color: Colors.white70))),
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: TextButton(
-                            child: const Text(
-                              'Segurança',
-                              style: TextStyle(
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                Colors.white,
-                              ),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      side: const BorderSide(
-                                          color: Colors.white70))),
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: TextButton(
-                            child: const Text(
-                              'Segurança',
-                              style: TextStyle(
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                Colors.white,
-                              ),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      side: const BorderSide(
-                                          color: Colors.white70))),
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: TextButton(
-                            child: const Text(
-                              'Segurança',
-                              style: TextStyle(
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                Colors.white,
-                              ),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      side: const BorderSide(
-                                          color: Colors.white70))),
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    flex: 18,
-                    child: ListView.builder(
+                   child: ListView.builder(
                         itemCount: imgList.length,
                         itemBuilder: (context, index) => GestureDetector(
                               onTap: () {
@@ -432,16 +211,14 @@ showDialogFuncion(context, img, title, desc) {
                     child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      Container(
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            desc,
-                            maxLines: 100,
-                            style: const TextStyle(
-                                fontSize: 15, color: Colors.black87),
-                            textAlign: TextAlign.justify,
-                          ),
+                      Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          desc,
+                          maxLines: 100,
+                          style: const TextStyle(
+                              fontSize: 15, color: Colors.black87),
+                          textAlign: TextAlign.justify,
                         ),
                       ),
                     ],

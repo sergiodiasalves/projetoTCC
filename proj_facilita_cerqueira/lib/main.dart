@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:proj_facilita_cerqueira/src/pages/complaints.dart';
 import 'package:proj_facilita_cerqueira/src/pages/home.dart';
 import 'package:proj_facilita_cerqueira/src/pages/information.dart';
-import 'package:proj_facilita_cerqueira/src/pages/map.dart';
 import 'package:proj_facilita_cerqueira/src/pages/news.dart';
 import 'package:proj_facilita_cerqueira/src/widgets/splash_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -17,11 +16,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      localizationsDelegates: const [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate
-      ],
-      supportedLocales: const [Locale('pt', 'BR')],
+      localizationsDelegates: 
+        GlobalMaterialLocalizations.delegates,
+        supportedLocales:  const [ Locale('pt', 'BR')],
       debugShowCheckedModeBanner: false,
       title: 'Facilita Cerqueira',
       theme: ThemeData(
@@ -33,8 +30,7 @@ class MyApp extends StatelessWidget {
         '/Home': (_) => const HomePage(),
         '/Information': (_) => const InformationPage(),
         '/Complaints': (_) => const ComplaintsPage(),
-        '/News': (_) => const NewsPage(),
-        '/Map':(_) => const MapPage(),
+        '/News': (_) => const NewsPage(),      
       },
     );
   }
